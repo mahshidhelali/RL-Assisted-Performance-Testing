@@ -3,14 +3,14 @@ This repository contains source code for a smart RL-assisted performance testing
 SaFReL: self-adaptive fuzzy reinforcement learning performance testing through platform-based test cases.
 RELOAD: Adaptive reinforcement learning-driven load testing.
  
-How the autonomous agents work.
+I. How the autonomous agents work:
 
 Q-learning as a model-free RL is the core learning algorithm in the autonomous agent.  
 The smart tester agent assumes two phases of learning:
 - Initial learning during which the agent learns an optimal policy for the first time.
 - Transfer learning during which the agent replays the learnt policy in similar cases while 
 
-Strengths of the RL-assisted performance testing agents:
+II. Strengths of the RL-assisted performance testing agents:
 
 - Eliminating dependency on the system models, source code during the testing.
 - The capability of 
@@ -19,7 +19,7 @@ Strengths of the RL-assisted performance testing agents:
   * reusing the knowledge in further potential situations
 which could lead to efficiency improvement, i.e. less required computation time, compared to 	common performance testing approaches.
 
-Application Areas:
+III. Application Areas:
 
 Evolving systems during Continuous Integration & Continuous Delivery, performance regression testing 
 
@@ -27,7 +27,7 @@ Evolving systems during Continuous Integration & Continuous Delivery, performanc
 
 SaFReL:
 
-It represents self-adaptive fuzzy reinforcement learning performance testing through generating platform-based test cases. It learns how to tune the resource availability to reach the intended performance breaking point for different types of SUTs (in terms of their sensitivity to resources).
+It is a self-adaptive fuzzy reinforcement learning performance test agent generating platform-based test cases. It learns how to tune the resource availability to reach the intended performance breaking point for different types of SUTs (in terms of their sensitivity to resources).
 In summary, It learns the optimal policy to generate platform-based performance test cases resulting in reaching the intended performance breaking point for different types of SUTs, and replays the learnt policy on further testing cases. 
 In the current version it uses a performance estimation module to estimate the performance behavior of software programs of CPU-intensive, memory-intensive and disk-intensive types running on the hardware with various configurations. More information about the structure of SaFReL and its mechanism is available in: 
 https://arxiv.org/abs/1908.06900
