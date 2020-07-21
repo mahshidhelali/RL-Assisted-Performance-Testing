@@ -42,4 +42,4 @@ It is an intelligent reinforcement learning-driven test agent which generates ef
 
 The intelligent tester agent can reuse the learned policy in further similar testing scenarios, for example, reaching different target values of response time or error rate. The learning-based load testing can reach the testing objective with lower cost in terms of workload size (number of users), i.e. smaller workload, compared to a typical load testing process. It is generally beneficial to the continuous testing activities such as varying scenarios and performance regression testing. 
 
-RELOAD uses Apache JMeter 5.1.1 and its associated libraries. The current code is an initial version and the developement will continue. The corresponding research article is also in preparation (June 2020). 
+RELOAD uses Apache JMeter 5.1.1. The current code is an initial version and the developement will continue. The corresponding research article is also in preparation (June 2020). 
