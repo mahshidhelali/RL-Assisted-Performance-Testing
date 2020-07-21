@@ -32,6 +32,7 @@ https://arxiv.org/abs/1908.06900
 The corresponding research article is currently under review (June 2020).
 
 =========================================================================
+
 RELOAD
 It is an intelligent reinforcement learning-driven test agent which generates efficient test load and executes it through Apache JMeter on SUT. RELOAD learns the optimal policy to generate an efficient test workload which meets testing objective, e.g. reaching an intended error rate, without access to a model or source code of SUT. It effectively learns the effects of different transactions involved in the workload and how to tune the load of transactions to approach the intended error rate. 
 
