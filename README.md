@@ -2,7 +2,8 @@
 This repository contains source code for a smart RL-assisted performance testing framework (agent) that is able to learn the efficient generation of performance test cases to meet testing objective, without access to source code and models, and replay the leant policy in further testing situations. It generates platform-based and workload-based test conditions, and involves two parts:
 SaFReL: self-adaptive fuzzy reinforcement learning performance testing through platform-based test cases.
 RELOAD: Adaptive reinforcement learning-driven load testing.
- 
+A summarized description of the framework is available at: "Performance Testing Driven by Reinforcement Learning" https://ieeexplore.ieee.org/abstract/document/9159096
+
 I. How the autonomous agents work:
 
 Q-learning as a model-free RL is the core learning algorithm in the autonomous agent.  
