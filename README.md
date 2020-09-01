@@ -45,5 +45,5 @@ The intelligent tester agent can reuse the learned policy in further similar tes
 
 RELOAD uses Apache JMeter 5.1.1. The current code is an initial version and the developement will continue. The corresponding research article is also in preparation (June 2020).
 
-Find out more information about RL-assisted performance assurance at "Machine Learning-Assisted Performance Assurance"
+Find out more information about RL-assisted performance assurance at: "Machine Learning-Assisted Performance Assurance"
 http://urn.kb.se/resolve?urn=urn:nbn:se:mdh:diva-47501
