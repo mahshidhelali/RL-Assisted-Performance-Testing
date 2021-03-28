@@ -3,10 +3,10 @@ The source code of RELOAD v0.2, a reinforcement learning agent for generating wo
 
 I. Experiment Set up:
 
-Although, this project is supported to run in a single machine (regardless of the operating system), we recommend carrying it out by setting up two virtual machines in order to prevent environmental noise.  
+Although this project is supported to run in a single machine (regardless of the operating system), we recommend carrying it out by setting up two virtual machines in order to prevent environmental noise.  
 
-- VM1: Will serve as the application node (System Under the test) 
-- VM2: Will serve as the load tester (Apache JMeter + RELOAD v0.2) 
+- **VM1:** Will serve as the application node (System Under the test) 
+- **VM2:** Will serve as the load tester (Apache JMeter + RELOAD v0.2) 
 
 **IMPORTANT**: Make sure that the two VMs can ping/communicate with each other! 
 
@@ -21,6 +21,6 @@ II. To run RELOAD v0.2:
 - Clone [deeplearning4j repository](https://github.com/deeplearning4j/deeplearning4j-examples) on your machine. 
 - Add RELOAD v0.2 files to the rl4j-examples folder of the above project. 
 - Open project to the IntelliJ IDEA, import all the necessary libraries (including Appache JMeter JARs), and make sure to resolve all Maven dependencies. 
-- Update local URL's that are found in the files of the QLearning approach. 
+- Update local URLs that are found in the files of the QLearning approach. 
 - Launch Appache JMeter. 
 - Execute ApplyApproach file.
