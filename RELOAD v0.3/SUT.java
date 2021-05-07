@@ -2,6 +2,7 @@ package org.deeplearning4j.rl4j.examples.advanced.DQN1;
 
 import org.deeplearning4j.rl4j.space.Encodable;
 import org.nd4j.linalg.api.ndarray.INDArray;
+import org.nd4j.linalg.factory.Nd4j;
 
 public class SUT {
 
@@ -32,9 +33,8 @@ public class SUT {
         //this.workLoadIncreasingStepRatio = 2.0;
 
         loadTester = new LoadTester();
-        transactions = new Transaction[8];
+        transactions = new Transaction[12];
         qualityMeasures = new QualityMeasures() {
-
             @Override
             public boolean isSkipped() {
                 return false;
@@ -42,7 +42,7 @@ public class SUT {
 
             @Override
             public INDArray getData() {
-                return null;
+             return   Nd4j.createFromArray(toArray());
             }
 
             @Override
@@ -50,29 +50,41 @@ public class SUT {
                 return null;
             }
         };
+//
+//        transactions[0] = new Transaction("01_PetStore", initialWorkLoadPerTransaction);
+//        transactions[1] = new Transaction("02_PetStore_LogIn", initialWorkLoadPerTransaction);
+//        transactions[2] = new Transaction("03_PetStore_Cart", initialWorkLoadPerTransaction);
+//        transactions[3] = new Transaction("04_PetStore_Fish", initialWorkLoadPerTransaction);
+//        transactions[4] = new Transaction("05_PetStore_Dogs", initialWorkLoadPerTransaction);
+//        transactions[5] = new Transaction("06_PetStore_Reptiles", initialWorkLoadPerTransaction);
+//        transactions[6] = new Transaction("07_PetStore_Cats", initialWorkLoadPerTransaction);
+//        transactions[7] = new Transaction("08_PetStore_Birds", initialWorkLoadPerTransaction);
 
+        transactions[0] = new Transaction("HomePage", initialWorkLoadPerTransaction);
+        transactions[1] = new Transaction("RegisterPage", initialWorkLoadPerTransaction);
+        transactions[2] = new Transaction("RegisterUser", initialWorkLoadPerTransaction);
+        transactions[3] = new Transaction("BrowsePage", initialWorkLoadPerTransaction);
+        transactions[4] = new Transaction("BrowseInCategory", initialWorkLoadPerTransaction);
+        transactions[5] = new Transaction("BrowseInRegion", initialWorkLoadPerTransaction);
+        transactions[6] = new Transaction("SellPage", initialWorkLoadPerTransaction);
+        transactions[7] = new Transaction("SellItem", initialWorkLoadPerTransaction);
+        transactions[8] = new Transaction("AboutMePage", initialWorkLoadPerTransaction);
+        transactions[9] = new Transaction("AboutMeUser", initialWorkLoadPerTransaction);
+        transactions[10] = new Transaction("BidOnItem", initialWorkLoadPerTransaction);
+        transactions[11] = new Transaction("SellItem", initialWorkLoadPerTransaction);
 
 //        transactions[0] = new Transaction("HomePage", initialWorkLoadPerTransaction);
 //        transactions[1] = new Transaction("RegisterPage", initialWorkLoadPerTransaction);
 //        transactions[2] = new Transaction("RegisterUser", initialWorkLoadPerTransaction);
 //        transactions[3] = new Transaction("BrowsePage", initialWorkLoadPerTransaction);
 //        transactions[4] = new Transaction("BrowseInCategory", initialWorkLoadPerTransaction);
-//        transactions[5] = new Transaction("BrowseInRegion", initialWorkLoadPerTransaction);
+//        transactions[5] = new Transaction("BrowseInRegions", initialWorkLoadPerTransaction);
 //        transactions[6] = new Transaction("SellPage", initialWorkLoadPerTransaction);
 //        transactions[7] = new Transaction("SellItem", initialWorkLoadPerTransaction);
 //        transactions[8] = new Transaction("AboutMePage", initialWorkLoadPerTransaction);
 //        transactions[9] = new Transaction("AboutMeUser", initialWorkLoadPerTransaction);
 //        transactions[10] = new Transaction("BidOnItem", initialWorkLoadPerTransaction);
-//        transactions[11] = new Transaction("SellItem", initialWorkLoadPerTransaction);
-
-        transactions[0] = new Transaction("01_PetStore", initialWorkLoadPerTransaction);
-        transactions[1] = new Transaction("02_PetStore_LogIn", initialWorkLoadPerTransaction);
-        transactions[2] = new Transaction("03_PetStore_Cart", initialWorkLoadPerTransaction);
-        transactions[3] = new Transaction("04_PetStore_Fish", initialWorkLoadPerTransaction);
-        transactions[4] = new Transaction("05_PetStore_Dogs", initialWorkLoadPerTransaction);
-        transactions[5] = new Transaction("06_PetStore_Reptiles", initialWorkLoadPerTransaction);
-        transactions[6] = new Transaction("07_PetStore_Cats", initialWorkLoadPerTransaction);
-        transactions[7] = new Transaction("08_PetStore_Birds", initialWorkLoadPerTransaction);
+////        transactions[11] = new Transaction("BuyItem", initialWorkLoadPerTransaction);
 
 
     }

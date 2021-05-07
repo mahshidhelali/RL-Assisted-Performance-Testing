@@ -85,7 +85,7 @@ public class RandomLoadRunner {
 
 
     public int getRandomAction(){
-    	return random.nextInt(8);
+    	return random.nextInt(12);
     }
 
       public void logStatus(String transactionName) {

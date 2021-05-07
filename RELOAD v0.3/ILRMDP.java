@@ -25,9 +25,13 @@ public class ILRMDP implements MDP<QualityMeasures, Integer, DiscreteSpace>{
 
 
 
+    DiscreteSpace actionSpace = new DiscreteSpace(12);
+
+
+
     private final Logger logger;
     private SUT SUT_env ;
-    DiscreteSpace actionSpace;
+//    DiscreteSpace actionSpace;
     SUTObservationSpace observationSpace;
     SUTstate curr_SUT_state;
     SUTstate prev_SUT_state;
@@ -41,9 +45,13 @@ public class ILRMDP implements MDP<QualityMeasures, Integer, DiscreteSpace>{
 
 
     public ILRMDP(int maxResposeTimeThreshold, double maxErrorRateThreshold, CsvWriter csvWriter, int episodeExecutionDelay) {
+
+
+
         logger = LoggerFactory.getLogger(this.getClass());
         SUT_env = new SUT();
-        actionSpace = new DiscreteSpace(8);//defining actions
+        actionSpace = new DiscreteSpace(actionSpace.getSize());
+//        actionSpace = new DiscreteSpace(12); //defining actions
         observationSpace = new SUTObservationSpace(maxResposeTimeThreshold, maxErrorRateThreshold);//defining states
         curr_SUT_state = SUT_env.getSUTState();
         this.maxResposeTimeThreshold = maxResposeTimeThreshold;
@@ -61,6 +69,7 @@ public class ILRMDP implements MDP<QualityMeasures, Integer, DiscreteSpace>{
 
    @Override
     public DiscreteSpace getActionSpace() {
+
         return this.actionSpace;
     }
 

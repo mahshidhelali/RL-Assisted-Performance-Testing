@@ -30,8 +30,8 @@ public class CsvWriter {
       this.fullLogFileName = createFile("fullLog");
       String str1 = dqnProperties.toCsvString();
       String str2 = "maxResponseTimeThreshold,maxErrorRateThreshold,episodeExecutionDelay\n"+ maxResponseTimeThreshold+","+maxErrorRateThreshold+","+episodeExecutionDelay+"\n";
-//      String columns = "episode,episodeStep,StepReply,responseTime,errorRate,totalWorkload,HomePage,RegisterPage,RegisterUser,BrowsePage,BrowseInCategory,BrowseInRegions,SellPage,SellItem,AboutMePage,AboutMeUser,BidOnItem, SellItem,startTime,endTime\n";
-        String columns = "episode,episodeStep,StepReply,responseTime,errorRate,totalWorkload,HomePage, Logn, AddCart, Fish, Dogs, Reptiles, Cats, Birds,endTime\n";
+      String columns = "episode,episodeStep,StepReply,responseTime,errorRate,totalWorkload,HomePage,RegisterPage,RegisterUser,BrowsePage,BrowseInCategory,BrowseInRegions,SellPage,SellItem,AboutMePage,AboutMeUser,BidOnItem,BuyItem, startTime,endTime\n";
+//        String columns = "episode,episodeStep,StepReply,responseTime,errorRate,totalWorkload,HomePage, Logn, AddCart, Fish, Dogs, Reptiles, Cats, Birds,endTime\n";
       String str = str1+str2+columns;
       writeString(str, fullLogFileName);
 
@@ -59,7 +59,7 @@ public class CsvWriter {
     }
 
     public static String createFile(String type){
-        String logFileName = "/Users/IEUser/Desktop/ql/DQN_"+java.time.LocalDate.now()+"_"+type+".csv";
+        String logFileName = "/Users/IEUser/Desktop/DQN LOGS/DQN_"+java.time.LocalDate.now()+"_"+type+".csv";
         try {
             File myObj = new File(logFileName);
             if (myObj.createNewFile()) {

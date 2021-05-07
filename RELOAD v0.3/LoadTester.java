@@ -31,8 +31,8 @@ public class LoadTester{
 
     private String JMETER_HOME_PATH = "/Users/IEUser/Desktop/apache-jmeter-5.1";
     private String JMETER_PROPERTY_PATH = "/Users/IEUser/Desktop/apache-jmeter-5.1/bin/jmeter.properties";
-    private String JMETER_LOG_FILE_PATH = "/Users/IEUser/Desktop/apache-jmeter-5.1/bin/transactions_rubis/PetStore/all_transactions_local_server.jtl";
-    private String JMX_FILES_PATH = "/Users/IEUser/Desktop/apache-jmeter-5.1/bin/transactions_rubis/PetStore/";
+    private String JMETER_LOG_FILE_PATH = "/Users/IEUser/Desktop/apache-jmeter-5.1/bin/transactions_rubis/all_transactions_local_server.jtl";
+    private String JMX_FILES_PATH = "/Users/IEUser/Desktop/apache-jmeter-5.1/bin/transactions_rubis/";
 
 //    private String JMETER_HOME_PATH = "/Users/erisa/OneDrive/Desktop/apache-jmeter-3.1/";
 //    private String JMETER_PROPERTY_PATH = "/Users/erisa/OneDrive/Desktop/apache-jmeter-3.1/bin/jmeter.properties";

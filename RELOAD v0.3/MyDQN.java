@@ -8,31 +8,8 @@ import org.deeplearning4j.rl4j.network.dqn.IDQN;
 import org.deeplearning4j.rl4j.space.DiscreteSpace;
 import org.deeplearning4j.rl4j.util.DataManager;
 import org.nd4j.linalg.learning.config.Adam;
-import org.apache.jmeter.control.LoopController;
-import org.apache.jmeter.engine.StandardJMeterEngine;
-import org.apache.jmeter.reporters.ResultCollector;
-import org.apache.jmeter.reporters.Summariser;
-import org.apache.jmeter.save.SaveService;
-import org.apache.jmeter.threads.ThreadGroup;
-import org.apache.jmeter.util.JMeterUtils;
-import org.apache.jorphan.collections.HashTree;
-import org.apache.jorphan.collections.SearchByClass;
-import org.apache.jmeter.reporters.ResultCollector;
-import org.apache.jmeter.reporters.Summariser;
-import org.apache.jmeter.samplers.SampleEvent;
-import org.apache.jmeter.samplers.SampleResult;
+import org.nd4j.linalg.learning.config.RmsProp;
 
-import org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase;
-import org.apache.jmeter.protocol.http.sampler.HTTPAbstractImpl;
-import org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl;
-import org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy;
-import org.apache.jmeter.threads.JMeterThread;
-
-import org.apache.commons.io.FileUtils;
-
-import org.apache.commons.io.output.ByteArrayOutputStream;
-import org.apache.commons.io.output.NullOutputStream;
-import org.apache.commons.io.output.StringBuilderWriter;
 
 import java.io.IOException;
 
@@ -48,14 +25,14 @@ public class MyDQN {
             maxEpocStep,//Max step per epoch
             maxStep, //Max step, training will finish after this number of steps
             expRepMaxSize, //Max size of experience replay
-            1,    //size of batches
+            64,    //size of batches
             10,   //target update (hard), Regular Q-learning can overestimate the action values under certain conditions. Double Q-learning adds stability to the learning. The main idea of double DQN is to freeze the network after every M number of updates or smoothly average for every M number of updates. The value of M is referred to as targetDqnUpdateFreq
             1,     //num step noop warmup
-            0.1,  //reward scaling
+            0.01,  //reward scaling
             0.5,  //gamma, discount factor
             10.0,  //td-error clipping
             0.1f,  //min epsilon
-            400,  //num step for eps greedy anneal
+            350,  //num step for eps greedy anneal
             true   //double DQN
         );
 
@@ -79,11 +56,20 @@ public class MyDQN {
     //configuring the neural net
     public static DQNFactoryStdDense.Configuration LOAD_TEST_NET =
         DQNFactoryStdDense.Configuration.builder()
-            .l2(0.01).updater(new Adam(1e-2)).numLayer(3).numHiddenNodes(16).build();
+            .l2(0.01).updater(new Adam(1e-3)).numLayer(3).numHiddenNodes(16).build();
+
+//  public static DQNFactoryStdDense.Configuration LOAD_TEST_NET =
+//        DQNFactoryStdDense.Configuration.builder()
+//            .l2(0)
+//            .updater(new RmsProp(0.005))
+//            .numHiddenNodes(36)
+//            .numLayer(3)
+//            .build();
 
     public static void main(String[] args) throws IOException {
         loadTest();
     }
+
 
 
     public static void loadTest() throws IOException {

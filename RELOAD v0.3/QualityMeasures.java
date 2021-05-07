@@ -2,6 +2,7 @@ package org.deeplearning4j.rl4j.examples.advanced.DQN1;
 
 
 import org.deeplearning4j.rl4j.space.Encodable;
+import org.nd4j.linalg.api.ndarray.INDArray;
 
 public abstract class QualityMeasures implements Encodable {
 
@@ -36,4 +37,5 @@ public abstract class QualityMeasures implements Encodable {
         double[] ar = new double[]{this.responseTime, this.errorRate};
         return ar;
     }
+
 }
