@@ -44,7 +44,7 @@ It is an intelligent reinforcement learning-driven test agent which generates an
 The intelligent tester agent can reuse the learned policy in further similar testing scenarios, for example, reaching different target values of response time or error rate. The learning-based load testing can reach the testing objective with lower cost compared to common load testing procedures, and results in higher test efficiency. It is generally beneficial to the continuous testing activities such as varying scenarios and performance regression testing. 
 
 RELOAD uses Apache JMeter 5.1.1. More information about the structure of RELOAD and its learning procedure is available at: 
-https://arxiv.org/abs/2104.12893
+https://ieeexplore.ieee.org/document/9504763
 
 Find out more information about RL-assisted performance assurance at: "Machine Learning-Assisted Performance Assurance"
 http://urn.kb.se/resolve?urn=urn:nbn:se:mdh:diva-47501
